@@ -1,0 +1,43 @@
+<div class="characters-table">
+  <div class="page-name">
+    <h1>Rick and Morty Characters</h1>
+  </div>  
+  <table>
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th class="th-name">Name</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="characters">
+        <tr *ngFor="let character of characters" [routerLink]="['/character', character.id]">
+              <td class="td-image"><img [src]="character.image" alt="{{character.name}}" width="50rem"/></td>
+            <td class="td-name">{{ character.name }}<p class="symbols">@ r . i . c . k . a  n  d .  m . o . r . t . y @</p></td>
+            
+            <td class="td-gender">
+              <svg-icon [name]="character.gender.toLowerCase()"></svg-icon>
+            </td>
+        </tr>
+      </ng-container>
+      
+    </tbody>
+  </table>
+  
+  <div class="pagination">
+    <div class="page-item">
+      <button (click)="goToPage(1)" [disabled]="currentPage === 1" class="page-link">&laquo;</button>
+    </div>
+    <div class="page-item">
+      <button class="page-link" *ngFor="let page of getPagesToShow()" 
+          (click)="goToPage(page)"
+          [class.active]="currentPage === page">
+          {{page}}
+      </button>
+    </div>
+    <div class="page-item">
+      <button (click)="goToPage(totalPages)" [disabled]="currentPage === totalPages" class="page-link">&raquo;</button>
+    </div>
+  </div>
+</div>

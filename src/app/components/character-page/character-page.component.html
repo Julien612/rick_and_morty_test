@@ -1,0 +1,27 @@
+<div class="character-description">
+
+<ng-container *ngIf="character">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{character.name}}</li>
+    </ol>
+  </nav>
+  <h1>{{ character.name }}</h1>
+  <img [src]="character.image" alt="{{ character.name }}" class="character-image" />
+  <ul class="list-group">
+    <li class="list-group-item">Gender: {{ character.gender }}</li>
+    <li class="list-group-item">Status: {{ character.status }}</li>
+    <li class="list-group-item">Race: {{ character.species }}</li>
+  </ul>
+  <p></p>
+  <p></p>
+  <p></p>
+  <h3>Episodes:</h3>
+  <ul>
+    <li *ngFor="let ep of character.episode">{{ getEpisodeNumber(ep) }}</li>
+  </ul>
+
+</ng-container> 
+  
+</div>

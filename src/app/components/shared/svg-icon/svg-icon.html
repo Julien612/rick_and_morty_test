@@ -1,0 +1,15 @@
+<svg *ngIf="icon === 'male'" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24" fill="none">
+  <image xlink:href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNVezsocR_zAT12ldBVJwjsxa5u44v7L6lcA&s" class="image-icon"/>
+</svg>
+
+<svg *ngIf="icon === 'female'" xmlns="http://www.w3.org/2000/svg" class="icon-female" viewBox="0 0 30 30" fill="none">
+  <image xlink:href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyQIQ2SFHlDz2M0GBZ9hPkv0xGNIWDwMl_jakH6XvOUvt__EpsxsG1HNTf1jiDmKxVel4&usqp=CAU" class="image-icon"/>
+</svg>
+
+<svg *ngIf="icon === 'genderless'" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24" fill="none">
+  <image xlink:href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0KpwzyjS5m9VirKvBhJy6egIPENhFHde0ug&s" class="image-icon"/>
+</svg>
+
+<svg *ngIf="icon !== 'male' && icon !== 'female' && icon !== 'genderless'" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24" fill="none">
+  <image xlink:href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg" class="image-icon"/>
+</svg>
