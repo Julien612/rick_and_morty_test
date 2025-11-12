@@ -30,8 +30,8 @@ export class RickMortyService {
   
   constructor(private http: HttpClient) {}
 
-  getCharacters(page: number = 1): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(`${this.baseUrl}?page=${page}`);
+  getCharacters(page: number = 1, name: string = ''): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(`${this.baseUrl}?page=${page}&name=${name}`);
   }
   getCharacterById(id: number): Observable<Character> {
     return this.http.get<Character>(`${this.baseUrl}/${id}`);

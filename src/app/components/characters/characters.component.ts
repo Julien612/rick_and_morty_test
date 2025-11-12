@@ -13,17 +13,16 @@ import { CommonModule } from '@angular/common';
 export class CharactersComponent implements OnInit {
   characters: Character[] = [];
   currentPage = 1;
-  isLoading = false;
   totalPages = 0;
 
   constructor(private rmService: RickMortyService) {}
 
   ngOnInit() {
-    this.loadCharacters(this.currentPage);
+    this.loadCharacters(this.currentPage, '');
   }
 
-  loadCharacters(page: number) {
-    this.rmService.getCharacters(page).subscribe({
+  loadCharacters(page: number, name?: string) {
+      this.rmService.getCharacters(page, name).subscribe({
       next: (res) => {
         this.characters = res.results;
         this.totalPages = res.info.pages;
@@ -34,10 +33,14 @@ export class CharactersComponent implements OnInit {
       },
     });
   }
-  
+  searchByName(){
+    const input = document.getElementById('inputId') as HTMLInputElement;
+    const value = input.value;
+    this.loadCharacters(1, value);
+  }
   goToPage(page: number){
     this.currentPage = page;
-    this.loadCharacters(this.currentPage);
+    this.loadCharacters(this.currentPage, '');
   }
   getPagesToShow(): number[] {
     let delta = 4;

@@ -20,35 +20,19 @@ h1{
     text-align: center;
     width: 5%;
 }
-/*tr:first-child th:first-child,
-tr:first-child td:first-child {
-  border-top-left-radius: 10px;
+.d-flex{
+    width:60%;
+    margin:3% 0 0 20%;
 }
-tr:first-child th:last-child,
-tr:first-child td:last-child {
-  border-top-right-radius: 10px;
-}
-tr:last-child th:first-child,
-tr:last-child td:first-child {
-  border-bottom-left-radius: 10px;
-}
-tr:last-child th:last-child,
-tr:last-child td:last-child {
-  border-bottom-right-radius: 10px;
-}*/
 table{
     margin: 3% 0 0 10%;
     width: 80%;
-    /*border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 10px;*/
 }
 tbody{
     overflow: hidden;
     border: 1px solid black;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-
 .symbols{
     display: inline-block;
     margin: auto 0 0 30%;
