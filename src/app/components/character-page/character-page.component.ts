@@ -18,7 +18,7 @@ export class CharacterPageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.id = +params['id'];
+      this.id = Number(params['id']);
       this.rmService.getCharacterById(this.id).subscribe((character) => {
         this.character = character;
         
