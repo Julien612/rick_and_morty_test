@@ -62,6 +62,6 @@ export class CharactersComponent implements OnInit {
         pages.push(i);
       }
     }
-    return Array.from(new Set(pages)).sort((a,b) => a - b);
+    return pages.sort((a,b) => a - b);
   }
 }
